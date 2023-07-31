@@ -16,14 +16,14 @@ pip install -r requirements.txt
 ```
 python manage.py createsuperuser
 ```
-+ Acceder con user y password via:
++ Acceder por Incognito con user y password via:
 ```
 127.0.0.1:8000/admin
 ```
 
 # Superusuario de pruebas
 username:admin
-contraseña:sup3r123!
+contraseña:super4dmin1+
 
 # Usuarios normales
-??
+Todavia no creados
