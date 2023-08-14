@@ -8,8 +8,8 @@ Crear Division
 <form method="post">
   {% csrf_token %}
   {{ formulario.as_p }}
-  <input class="btn btn-success border border-light rounded-pill" type="submit" value="Guardar" />
+  <input class="btn btn-success border border-dark text-dark rounded-pill bg-warning bg-opacity-25" type="submit" value="Guardar"/>
 </form>
 <br>
-<a href="{% url 'lista_cursos' %}">Volver a la lista</a>
+<a href="{% url 'lista_cursos' %}" style=" font-size: 20px">Volver a la lista</a>
 {% endblock contenido %}

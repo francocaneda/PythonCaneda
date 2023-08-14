@@ -7,9 +7,9 @@ Crear curso
 {% block contenido %}
 <form method="post">
   {% csrf_token %}
-  <p>Nombre de la division</p>
+  <p style="font-family: 'Borel'">Nombre de la division</p>
   <input type="text" name="nombre">
-  <p>Comision</p>
+  <p style="font-family: 'Borel'">Comision</p>
   <input type="number" name="comision" step="1">
   <input type="submit" value="Enviar">
 </form>

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<h3 style="font-family: 'Bricolage Grotesque'; text-shadow: 0 0 8px white; color: red;">Subir tu Avatar</h3>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Subir imagen" class="bg-warning bg-opacity-25"/>
+</form>
+{% endblock contenido %}

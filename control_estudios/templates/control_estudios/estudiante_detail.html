@@ -2,24 +2,24 @@
 
 {% block contenido %}
 
-<p>
-  <strong>Apellido:</strong> {{object.apellido}}
+<p style="font-size: 18px;">
+  <strong style="font-family: 'Borel'; margin-right: 5px; font-size: 20px;">Apellido:</strong> {{object.apellido}}
 </p>
-<p>
-  <strong>Nombre:</strong> {{object.nombre}}
+<p style="font-size: 18px;">
+  <strong style="font-family: 'Borel'; margin-right: 5px; font-size: 20px;">Nombre:</strong> {{object.nombre}}
 </p>
-<p>
-  <strong>DNI:</strong> {{object.dni}}
+<p style="font-size: 18px;">
+  <strong style="font-family: 'Borel'; margin-right: 5px; font-size: 20px;">DNI:</strong> {{object.dni}}
 </p>
-<p>
-  <strong>Telefono:</strong> {{object.telefono}}
+<p style="font-size: 18px;">
+  <strong style="font-family: 'Borel'; margin-right: 5px; font-size: 20px;">Telefono:</strong> {{object.telefono}}
 </p>
-<p>
-  <strong>Email:</strong> {{object.email}}
+<p style="font-size: 18px;">
+  <strong style="font-family: 'Borel'; margin-right: 5px; font-size: 20px;">Email:</strong> {{object.email}}
 </p>
 
 <br>
-<a href="{% url 'lista_estudiantes' %}" style="margin-right: 20px;">Volver a la lista</a>
-<a href="{% url 'editar_estudiante' object.id %}">Editar</a>
+<a href="{% url 'lista_estudiantes' %}" style="margin-right: 20px; font-size: 20px;">Volver a la lista</a>
+<a href="{% url 'editar_estudiante' object.id %}" style="font-size: 20px;">Editar</a>
 
 {% endblock contenido %}

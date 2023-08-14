@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block titulo %}
-Lista de Divisiones
+<title>Lista de Divisiones</title>
 {% endblock titulo %}
 
 {% block contenido %}
-<h2 class="text-danger">Divisiones:</h2>
-<a href="{% url 'lista_cursos' %}" style="margin-right: 20px;">Ver todos</a>
-<a href="{% url 'crear_curso' %}">Crear division</a>
+<h2 class="text-danger" style="font-family: 'Borel';">Divisiones:</h2>
+<a href="{% url 'lista_cursos' %}" style="margin-right: 20px; font-size: 20px">Ver todos</a>
+<a href="{% url 'crear_curso' %}" style=" font-size: 20px">Crear division</a>
 <br><br>
 <form action="{% url 'buscar_cursos' %}" method="post">
   {% csrf_token %}
@@ -19,24 +19,24 @@ Lista de Divisiones
 <table class="table">
   <tbody>
     <tr>
-      <th>ID</th>
-      <th>Nombre</th>
-      <th>Comision</th>
+      <th style="font-family: 'Borel'; font-size: 20px;">ID</th>
+      <th style="font-family: 'Borel'; font-size: 20px;">Nombre</th>
+      <th style="font-family: 'Borel'; font-size: 20px;">Comisión</th>
       <th></th>
       <th></th>
     </tr>
     {% for curso in cursos %}
     <tr>
       <td>{{ curso.id }}</td>
-      <td>{{ curso.nombre }}</td>
+      <td style="margin-left: 20px;">{{ curso.nombre }}</td>
       <td>{{ curso.comision }}</td>
       <td>
-        <a class="btn btn-link" href="{% url 'editar_curso' curso.id %}">Editar</a>
+        <a class="btn btn-link" href="{% url 'editar_curso' curso.id %}" style="font-size: 18px;">Editar</a>
       </td>
       <td>
         <form action="{% url 'eliminar_curso' curso.id %}" method="post">
           {% csrf_token %}
-          <input type="submit" class="btn btn-link" value="Eliminar"/>
+          <input type="submit" class="btn btn-link" value="Eliminar" style="font-size: 18px;"/>
         </form>
       </td>
     </tr>

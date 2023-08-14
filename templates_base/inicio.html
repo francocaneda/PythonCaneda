@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 
 {% block titulo %}
-Club Atletico Huracan
+Club Atlético Huracan
 {% endblock titulo %}
 
 {% block contenido %}
-<h1 class="text-danger text-center">Instituto del Club Atletico Huracan</h1>
+<h1 class="text-danger text-center" style="font-family: 'Bricolage Grotesque'; font-size: 60px; text-shadow: 0 0 8px white">Instituto del Club Atlético Huracán</h1>
+<br><br>
+{% if user.is_authenticated %}
+<h2 class="text-danger text-center"  style="text-transform: capitalize;" style="font-family: 'Borel'; text-shadow: 0 0 8px white">¡Hola {{user.username}}!</h2>
+{% endif %}
+
 {% endblock contenido %}

@@ -5,30 +5,30 @@ Lista de estudiantes
 {% endblock titulo %}
 
 {% block contenido %}
-<h2 class="text-danger">Lista de estudiantes:</h2>
-<a href="{% url 'crear_estudiante' %}">Crear estudiante</a>
+<h2 class="text-danger" style="font-family: 'Borel'">Lista de estudiantes:</h2>
+<a href="{% url 'crear_estudiante' %}" style="font-size: 20px;">Crear estudiante</a>
 <br>
 
-<table class="table">
+<table class="table" style="margin-top: 20px;">
   <tbody>
     <tr>
-      <th>ID</th>
-      <th>Nombre</th>
-      <th>Apellido</th>
+      <th style="font-family: 'Borel'; font-size: 20px;">ID</th>
+      <th style="font-family: 'Borel'; font-size: 20px;">Nombre</th>
+      <th style="font-family: 'Borel'; font-size: 20px; ">Apellido</th>
       <td></td>
       <td></td>
       <td></td>
-    </tr>
+    </tr style="font-family: 'Borel'">
     {% for alumno in object_list %}
     <tr>
-      <td>{{ alumno.id }}</td>
-      <td>{{ alumno.nombre }}</td>
-      <td>{{ alumno.apellido }}</td>
+      <td style="font-size: 17px;">{{ alumno.id }}</td>
+      <td style="font-size: 17px;">{{ alumno.nombre }}</td>
+      <td style="font-size: 17px;">{{ alumno.apellido }}</td>
       <td>
-        <a href="{% url 'ver_estudiante' alumno.id %}">Ver</a>
+        <a href="{% url 'ver_estudiante' alumno.id %}" style="font-size: 17px;">Ver</a>
       </td>
       <td>
-        <a href="{% url 'editar_estudiante' alumno.id %}">Editar</a>
+        <a href="{% url 'editar_estudiante' alumno.id %}" style="font-size: 17px;">Editar</a>
       </td>
       <td>
         <a href="{% url 'eliminar_estudiante' alumno.id %}">

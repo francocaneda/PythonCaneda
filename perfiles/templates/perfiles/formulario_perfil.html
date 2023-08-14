@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<p style="font-family: 'Bricolage Grotesque'; font-size: 20px;">Tu username es "<b style="font-family: 'Bricolage Grotesque';  font-size: 20px;">{{ object.username }}</b>"</p>
+
+<h3 style="font-family: 'Bricolage Grotesque'; text-shadow: 0 0 8px white; color: red;">Editar datos:</h3>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Guardar" class="bg-warning bg-opacity-25"/>
+</form>
+{% endblock contenido %}

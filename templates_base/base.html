@@ -14,7 +14,10 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
         <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Borel&family=Bricolage+Grotesque:opsz,wght@10..48,500&family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+        <!--<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />-->
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
 
@@ -24,12 +27,35 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-danger bg-gradient static-top">
             <div class="container">
-                <a class="navbar-brand fw-bolder text-light" href="https://cahuracan.com/"><img src="https://cahuracan.com/_next/image?url=%2Fimages%2Fescudo_reflex.png&w=256&q=75" width="50" height="80" /></a>
-                <a class="navbar-brand fw-bolder text-light" href="https://cahuracan.com/">Official Site</a>
-                <a class="navbar-brand fw-bolder text-light" href="{% url 'inicio' %}">INICIO</a>
-                <a class="navbar-brand fw-bolder text-light" href="{% url 'lista_estudiantes' %}">ESTUDIANTES</a>
-                <a class="navbar-brand fw-bolder text-light" href="{% url 'lista_cursos' %}">DIVISIONES</a>
-                <a class="btn fw-bolder bg-success.bg-gradient bg-success text-light border border-light rounded-pill" href="#">REGISTRARSE</a>
+                <a class="navbar-brand fw-bolder text-light" href="https://cahuracan.com/"><img src="https://cahuracan.com/_next/image?url=%2Fimages%2Fescudo_reflex.png&w=256&q=75" width="65" height="100"/></a>
+                <a class="navbar-brand fw-bolder text-light" href="https://cahuracan.com/" style="font-family: 'Bricolage Grotesque'; font-size: 25px;">OFFICIAL SITE</a>
+                <a class="navbar-brand fw-bolder text-light" href="{% url 'inicio' %}" style="font-family: 'Bricolage Grotesque';">INICIO</a>
+                <a class="navbar-brand fw-bolder text-light" href="{% url 'lista_estudiantes' %}" style="font-family: 'Bricolage Grotesque'">ESTUDIANTES</a>
+                <a class="navbar-brand fw-bolder text-light" href="{% url 'lista_cursos' %}" style="font-family: 'Bricolage Grotesque'">DIVISIONES</a>
+                {% if user.is_authenticated %}
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle bg-dark bg-opacity-75" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div style="display: inline-flex;">
+                            <span style="text-transform: capitalize;" style="font-family: 'Bricolage Grotesque'">{{ user.username }}</span>
+                        </div>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li>
+                            <a class="dropdown-item" href="{% url 'editar_perfil' %}">Editar Mis Datos</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url 'agregar_avatar' %}">Agregar Avatar</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url 'logout' %}"><strong>Cerrar Sesión</strong></a>
+                        </li>
+                    </ul>
+                </div>
+                {% else %}
+                <a class="btn fw-bolder bg-success.bg-gradient bg-dark bg-opacity-75 text-light border border-light rounded-pill" href="{% url 'login' %}" style="font-size: 20px;">Iniciar sesión</a>
+                <a class="btn fw-bolder bg-success.bg-gradient bg-dark bg-opacity-75 text-light border border-light rounded-pill" href="{% url 'registro' %}" style="font-size: 20px;">Registrarme</a>
+                {% endif %}
+               <!-- <a class="btn fw-bolder bg-success.bg-gradient bg-success text-light border border-light rounded-pill" href="#">REGISTRARSE</a> -->
             </div>
         </nav>
 
@@ -40,12 +66,12 @@
         </section>
         </div>
 
-        <div id="carouselExampleControls" class="carousel slide bg-danger p-2 text-dark bg-opacity-25" data-bs-ride="carousel" style="display: flex;">
-            <div class="carousel-inner" style="justify-content: center; align-items: center;">
+        <div id="carouselExampleControls" class="carousel bg-danger p-2 text-dark bg-opacity-25" data-bs-ride="carousel" style="display: flex;">
+            <div class="carousel-inner" style="justify-content: center; align-items: center; margin-bottom: 30px;">
               <div class="carousel-item active">
                 <img src="https://admin2.cahuracan.com/new/wp-content/uploads/2021/01/el_palacio_3-1-1024x576.jpg" class="d-block w-100 rounded-pill" alt="mascotas" title="Nosotros" height="700" />
               </div>
-      
+        
               <div class="carousel-item">
                 <a target="_blank"> <img src="https://admin2.cahuracan.com/new/wp-content/uploads/2021/01/el_palacio_1-2-1024x576.jpg" alt="video" class="d-block w-100 rounded-pill" height="700" title="Video TUKI Shop" class="video1" /> </a>
               </div>

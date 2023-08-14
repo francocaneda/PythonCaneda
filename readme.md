@@ -25,5 +25,7 @@ python manage.py createsuperuser
 username:admin
 contraseña:super4dmin1+
 
+
 # Usuarios normales
-Todavia no creados
+username: franco
+contraseña:huracanhuracan
