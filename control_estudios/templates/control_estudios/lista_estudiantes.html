@@ -5,11 +5,52 @@ Lista de estudiantes
 {% endblock titulo %}
 
 {% block contenido %}
+
+<h2 class="text-danger" style="font-family: 'Borel';">¡De Estudiantes a Profesionales!</h2>
+<br><br>
+
+<div style="display: flex; justify-content: space-around;">
+<div class="card bg-success p-2 text-dark bg-opacity-50" style="width: 22rem;">
+  <img src="https://media.istockphoto.com/id/1162215652/es/foto/hermosa-chica-de-la-escuela-media.jpg?s=612x612&w=0&k=20&c=vuBgkgPEsEdU_qkfgq_jQFxnotMzhMHEq11S-7IX7p0=" class="card-img-top" alt="estudiantes">
+  <div class="card-body">
+    <p class="card-text" style="text-align: justify; font-weight: bold; font-size: 19px; font-family: 'Bricolage Grotesque'">Paloma Sanchez finalizó primera en la jornada de lectura "Santillan" organizada por la Ciudad de Buenos Aires.</p>
+  </div>
+</div>
+
+<div class="card bg-success p-2 text-dark bg-opacity-50" style="width: 24rem;">
+  <img src="https://www.colegioceumonteprincipe.es/wp-content/uploads/innovacion_pedagogica_monteprincipe-820x500.jpg" class="card-img-top" alt="estudiantes">
+  <div class="card-body">
+    <p class="card-text" style="text-align: justify; font-weight: bold; font-size: 18px; font-family: 'Bricolage Grotesque'">A continuación te detallamos algunas recomendaciones a tener en cuenta para lograr una mejor higiene dentro y fuera del instituto.</p>
+    <div style="display: flex; justify-content: center;"><a href="#" class="btn border-danger" style="background-color: pink;">¡Hacé click acá!</a></div>
+  </div>
+</div>
+
+<div class="card bg-success p-2 text-dark bg-opacity-50" style="width: 27rem;">
+  <img src="https://www.fceia.unr.edu.ar/estudiantil/wp-content/uploads/2022/03/322339072_899763841050833_8218125715826538293_n.jpg" class="card-img-top" alt="estudiantes">
+  <div class="card-body">
+    <p class="card-text" style="text-align: justify; font-weight: bold; font-size: 18px; font-family: 'Bricolage Grotesque'">Enterate de las Becas Progresar para estudiantes en el siguiente enlace. Aplica a menores de 18 años y son otorgadas por el Gobierno.</p>
+    <div style="display: flex; justify-content: center;"><a href="#" class="btn border-danger" style="background-color: pink;">¡Hacé click acá!</a></div>
+  </div>
+</div>
+
+<div class="card bg-success p-2 text-dark bg-opacity-50" style="width: 23rem;">
+  <img src="http://www.buenosairesinclusiva.com.ar/wp-content/uploads/2020/03/Boleto_estudiantil_2019_Inscribirse__renovacion_y_credencial-1.jpg" class="card-img-top" alt="estudiantes">
+  <div class="card-body">
+    <p class="card-text" style="text-align: justify; font-weight: bold; font-size: 18px; font-family: 'Bricolage Grotesque'">Ya podés solicitar tu boleto estudiantil, para el cual deberás acercarse a la bedelía. Desde allí te informarán los beneficios e iniciarás el trámite correspondiente.</p>
+  </div>
+</div>
+
+
+</div>
+
+<br><br><br>
+
+
 <h2 class="text-danger" style="font-family: 'Borel'">Lista de estudiantes:</h2>
 <a href="{% url 'crear_estudiante' %}" style="font-size: 20px;">Crear estudiante</a>
 <br>
 
-<table class="table" style="margin-top: 20px;">
+<table class="table bg-success p-2 text-dark bg-opacity-25 rounded"" style="margin-top: 20px;">
   <tbody>
     <tr>
       <th style="font-family: 'Borel'; font-size: 20px;">ID</th>
@@ -18,7 +59,7 @@ Lista de estudiantes
       <td></td>
       <td></td>
       <td></td>
-    </tr style="font-family: 'Borel'">
+    </tr>
     {% for alumno in object_list %}
     <tr>
       <td style="font-size: 17px;">{{ alumno.id }}</td>

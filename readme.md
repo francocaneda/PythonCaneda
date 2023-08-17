@@ -1,5 +1,7 @@
 # ProyectoCoder
 
+-- Proyecto creado por Caneda Franco Ezequiel, DNI 40729032
+
 ## Instrucciones instalar proyecto en local
 + Crea una carpeta contenedora madre
 + Abre la consola y ubicate en la carpeta madre

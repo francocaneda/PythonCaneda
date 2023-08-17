@@ -1,11 +1,49 @@
 {% extends "base.html" %}
 
 {% block titulo %}
-<title>Lista de Divisiones</title>
+Lista de Divisiones
 {% endblock titulo %}
 
 {% block contenido %}
-<h2 class="text-danger" style="font-family: 'Borel';">Divisiones:</h2>
+
+<h2 class="text-danger" style="font-family: 'Borel';">Formamos estudiantes y personas...</h2>
+<br><br>
+
+<div style="display: flex; justify-content: space-around;">
+<div class="card bg-success p-2 text-dark bg-opacity-50" style="width: 22rem;">
+  <img src="https://s3.ppllstatics.com/hoy/www/pre2017/multimedia/noticias/201505/03/media/extremadura_4.jpg" class="card-img-top" alt="estudiantes">
+  <div class="card-body">
+    <p class="card-text" style="text-align: justify; font-weight: bold; font-size: 19px; font-family: 'Bricolage Grotesque'">La división de Cuarto Año culminó segunda en el programa de Olimpiadas de Matemáticas 2023, en las cuales participaron mas de 100 colegios.</p>
+  </div>
+</div>
+
+<div class="card bg-success p-2 text-dark bg-opacity-50" style="width: 30rem;">
+  <img src="https://www.clarin.com/img/2017/11/07/Sykf86yyf_1256x620.jpg" class="card-img-top" alt="estudiantes">
+  <div class="card-body">
+    <p class="card-text" style="text-align: justify; font-weight: bold; font-size: 18px; font-family: 'Bricolage Grotesque'">Les damos la bienvenida a los nuevos quemeritos, quienes estarán iniciando sus estudios en Primer Grado. Desde el CA Huracán fomentamos la formación académica y ponemos a disposición todos nuestros recursos para mejorar la calidad de vida de las personas. ¡Muchos éxitos!</p>
+  </div>
+</div>
+
+<div class="card bg-success p-2 text-dark bg-opacity-50" style="width: 18rem;">
+  <img src="https://colsanjose.edu.co/wp-content/uploads/2021/11/Diseno-sin-titulo-2021-11-10T014930.228.png" class="card-img-top" alt="estudiantes">
+  <div class="card-body">
+    <p class="card-text" style="text-align: justify; font-weight: bold; font-size: 18px; font-family: 'Bricolage Grotesque'">¡Campeones! Con mucho orgullo les contamos que nuestras pequeñas super estrellas de Segundo Año campeonaron en el torneo Regional San Isidro</p>
+  </div>
+</div>
+
+<div class="card bg-success p-2 text-dark bg-opacity-50" style="width: 23rem;">
+  <img src="https://uninorte.edu.py/wp-content/uploads/2022/11/alumnos-2.jpg" class="card-img-top" alt="estudiantes">
+  <div class="card-body">
+    <p class="card-text" style="text-align: justify; font-weight: bold; font-size: 18px; font-family: 'Bricolage Grotesque'">Felicitamos a los nuevos egresados 2023 que finalizaron sus estudios durante dicho semestre satisfactoriamente. Les deseamos un próspero inicio en su nueva etapa.</p>
+  </div>
+</div>
+
+
+</div>
+
+<br><br><br>
+
+<h3 class="text-danger" style="font-family: 'Borel';">Divisiones:</h3>
 <a href="{% url 'lista_cursos' %}" style="margin-right: 20px; font-size: 20px">Ver todos</a>
 <a href="{% url 'crear_curso' %}" style=" font-size: 20px">Crear division</a>
 <br><br>
@@ -16,7 +54,7 @@
 </form>
 <br>
 
-<table class="table">
+<table class="table bg-success p-2 text-dark bg-opacity-25 rounded">
   <tbody>
     <tr>
       <th style="font-family: 'Borel'; font-size: 20px;">ID</th>
@@ -28,7 +66,7 @@
     {% for curso in cursos %}
     <tr>
       <td>{{ curso.id }}</td>
-      <td style="margin-left: 20px;">{{ curso.nombre }}</td>
+      <td>{{ curso.nombre }}</td>
       <td>{{ curso.comision }}</td>
       <td>
         <a class="btn btn-link" href="{% url 'editar_curso' curso.id %}" style="font-size: 18px;">Editar</a>
